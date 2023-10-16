@@ -1,0 +1,150 @@
+﻿@model ApplicantsFromProject.Models.ApplicantsFrom
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class ="container" style="margin-top:20px">
+
+
+
+<h4>Applicantion From</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <div id="successMessage" class="alert alert-success">
+                    @ViewBag.SuccessMessage
+                </div>
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group" style="margin-bottom:15px">
+                    <label asp-for="Name_En" class="control-label">Name In Engilish</label>
+                <input asp-for="Name_En" class="form-control" />
+                <span asp-validation-for="Name_En" class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="Mobile" class="control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label asp-for="Github_Link" class="control-label">Github Link</label>
+                <input asp-for="Github_Link" data-val="false" class="form-control" />
+                <span asp-validation-for="Github_Link"  class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label asp-for="LinkedIn_Link" class="control-label">LinkedIn Link</label>
+                <input asp-for="LinkedIn_Link" data-val="false" class="form-control" />
+                <span asp-validation-for="LinkedIn_Link" class="text-danger"></span>
+            </div>
+                <div class="form-group form-check" style="margin-bottom:15px">
+                <label class="form-check-label">
+                        <input class="form-check-input" asp-for="ITI_Graduate" /> ITI Graduate
+                </label>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="year_Of_Graduation" class="control-label">ITI Year Of Graduation</label>
+                <input asp-for="year_Of_Graduation" data-val="false" class="form-control" />
+                <span asp-validation-for="year_Of_Graduation" class="text-danger"></span>
+            </div>
+
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="Governorate" class="control-label"></label>
+                <select asp-for="GovernorateId" class="form-control" asp-items="ViewBag.GovernorateId"></select>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="Faculty" class="control-label"></label>
+                <select asp-for="FacultyId" class="form-control" asp-items="ViewBag.FacultyId"></select>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="University" class="control-label"></label>
+                <select asp-for="UniversityId" class="form-control" asp-items="ViewBag.UniversityId"></select>
+            </div>
+
+                <div class="form-group" style="margin-bottom:15px">
+                    <label asp-for="Graduation_Year" class="control-label">Graduation Year</label>
+                <input asp-for="Graduation_Year" class="form-control" />
+                <span asp-validation-for="Graduation_Year" class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label asp-for="Current_Company" class="control-label">Current Company</label>
+                <input asp-for="Current_Company" data-val="false" class="form-control" />
+                <span asp-validation-for="Current_Company" class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label asp-for="Current_Salary" class="control-label">Current Salary</label>
+                <input asp-for="Current_Salary" data-val="false"  class="form-control" />
+                <span asp-validation-for="Current_Salary" class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="Expected_Salary" class="control-label">Expected Salary</label>
+                <input asp-for="Expected_Salary" class="form-control" />
+                <span asp-validation-for="Expected_Salary" class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label asp-for="Availability_Date" class="control-label">Availability Date</label>
+                <input asp-for="Availability_Date" class="form-control" />
+                <span asp-validation-for="Availability_Date" class="text-danger"></span>
+            </div>
+                <div class="form-group form-check" style="margin-bottom:15px">
+                <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Interested_Working_In_Cairo" /> Are you interesting to work in cairo?
+                </label>
+            </div>
+                <div class="form-group form-check" style="margin-bottom:15px">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Mobile_Apps_Experience" /> Do you have mobile apps experience?
+                </label>
+            </div>
+                <div class="form-group form-check" style="margin-bottom:15px">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="E_Commerce_Apps_Experience" /> Do you have mobile apps E-Commerce experience?
+                </label>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="CVFile" class="control-label">Upload Your CV</label>
+                <input asp-for="CVFile" class="form-control" />
+                <span asp-validation-for="CVFile" class="text-danger"></span>
+            </div>
+                <div class="form-group" style="margin-bottom:15px">
+              
+                <input asp-for="CV" data-val="false" class="form-control" hidden />
+                <span asp-validation-for="CV" class="text-danger"></span>
+            </div>
+
+                <div class="form-group" style="margin-bottom:15px">
+                <label asp-for="Speciality" class="control-label"></label>
+                <select asp-for="SpecialityId" class ="form-control" asp-items="ViewBag.SpecialityId"></select>
+            </div>
+
+                <div class="form-group" style="margin-bottom:15px">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+       
+    </div>
+</div>
+
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Hide the success message after 5 seconds
+        setTimeout(function () {
+            document.getElementById("successMessage").style.display = "none";
+        }, 5000);
+    </script>
+}
+
